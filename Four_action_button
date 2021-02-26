@@ -1,0 +1,73 @@
+package com.company;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.WindowEvent;
+import java.awt.event.WindowAdapter;
+import javax.swing.*;
+class Main extends Frame {
+
+
+    public static void main(String[] args) {
+        // write your code here
+
+        Button b1,b2,b3,b4;
+        Label l;
+        Main f = new Main();
+        f.setLayout(null);
+        f.setVisible(true);
+        f.setSize(600, 400);
+        f.setTitle("Language:");
+        b1=new Button("hindi");
+        b2=new Button("english");
+        b3=new Button("both");
+        b4=new Button("not");
+        l=new Label("");
+        b1.setBounds(250,150,50,30);
+        b2.setBounds(300,150,50,30);
+        b3.setBounds(250,200,50,30);
+        b4.setBounds(300,200,50,30);
+        l.setBounds(200,250,220,30);
+        f.add(b1);
+        f.add(b2);
+        f.add(b3);
+        f.add(b4);
+        f.add(l);
+      class ButtonHandeler implements ActionListener
+      {
+          @Override
+          public void actionPerformed(ActionEvent e) {
+              if (e.getSource()==b1)
+              {
+               l.setText("you know hindi language:");
+              }
+              if (e.getSource()==b2)
+              {
+                  l.setText("you know english language:");
+              }
+              if (e.getSource()==b3)
+              {
+                  l.setText("you know hindi and english language:");
+              }
+              if (e.getSource()==b4)
+              {
+                  l.setText("nothing in above:");
+              }
+          }
+
+      }
+
+      f.addWindowListener(new WindowAdapter() {
+            public void windowClosing(WindowEvent we) {
+                System.exit(0);
+
+            }
+        });
+        ButtonHandeler bh=new ButtonHandeler();
+        b1.addActionListener(bh);
+        b2.addActionListener(bh);
+        b3.addActionListener(bh);
+        b4.addActionListener(bh);
+
+    }
+}
