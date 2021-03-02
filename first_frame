@@ -1,0 +1,26 @@
+import java.awt.*;
+public class Myframe extends Frame
+{
+  public static void main(String[] args) {
+  		Myframe f= new Myframe();
+          
+         f.setVisible(true);
+         f.setSize(600, 400);
+         f.setTitle("first frame:");
+               
+         f.addWindowListener(new WindowAdapter()
+         {
+          public void windowClosing(WindowEvent we)
+          {
+            System.exit(0);
+                     
+          }
+         });      
+  	
+    
+
+
+  	}
+
+       
+}
