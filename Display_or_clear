@@ -1,0 +1,36 @@
+  Frame f= new Frame();
+        Button b= new Button("enter");
+        Button b1= new Button("clear");
+        TextArea a=new TextArea();
+
+        b.setBounds(330,100,50,30);
+        b1.setBounds(400,100,50,30);
+        a.setBounds(0,100,300,100);
+
+        f.add(b);
+        f.add(b1);
+        f.add(a);
+
+        f.setLayout(null);
+
+        f.setVisible(true);
+        f.setSize(500,500);
+        f.addWindowListener(new WindowAdapter() {
+            @Override
+            public void windowClosing(WindowEvent we) {
+                System.exit(0);
+            }
+        });
+        b.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+           a.setText("welcome aman");
+            }
+        });
+b1.addActionListener(new ActionListener() {
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        a.setText("");
+    }
+});
+    }
