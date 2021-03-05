@@ -1,0 +1,53 @@
+import java.awt.*;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+import java.awt.event.*;
+class choice {
+
+    public static void main(String[] args) {
+
+        Frame f=new Frame();
+
+      final Choice c=new Choice();
+      TextField tf=new TextField();
+      Label l=new Label();
+      Button b=new Button("show");
+       Button b1=new Button();
+
+        f.setLayout(null);
+        f.setSize(600,500);
+        f.setVisible(true);
+        c.add("android");
+        c.add("ios");
+        c.add("Window");
+        c.add("linux");
+
+        c.setBounds(40,50,100,50);
+        b.setBounds(150,50,50,40);
+        tf.setBounds(100,200,400,50);
+    //   cb.setBounds(100,120,40,30);
+        f.add(c);
+        f.add(tf);
+        f.add(b);
+        f.add(l);
+        f.add(b1);
+  //      f.add(cb1);
+//        f.add(cb2);
+
+
+f.addWindowListener(new WindowAdapter() {
+    @Override
+    public void windowClosing(WindowEvent e) {
+        System.exit(0);
+    }
+});
+b.addActionListener(new ActionListener() {
+    @Override
+    public void actionPerformed(ActionEvent e) {
+
+       tf.setText(c.getItem(c.getSelectedIndex()));
+
+         }
+});
+    }
+}
