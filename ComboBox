@@ -1,0 +1,38 @@
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+
+public class ComboBox {
+    JButton b;
+    JLabel l;
+    ComboBox(){
+        JFrame f=new JFrame("combobox");
+        String Language[]={"c","c++","java","python"};
+        f.setLayout(null);
+        JComboBox cb=new JComboBox(Language);
+        cb.setBounds(150,100,100,40);
+        b=new JButton("print value");
+        l=new JLabel("");
+        l.setBounds(150,150,400,40);
+        b.setBounds(150,200,100,40);
+        f.setVisible(true);
+        f.add(b);
+        f.add(l);
+        f.add(cb);
+        f.setSize(500,500);
+        f.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        b.addActionListener(new ActionListener() {
+     @Override
+     public void actionPerformed(ActionEvent e) {
+         String a="selected Language is:"+cb.getItemAt(cb.getSelectedIndex());
+         l.setText(a);
+     }
+ });
+
+    }
+    public static void main(String[] args) {
+        new ComboBox();
+    }
+}
