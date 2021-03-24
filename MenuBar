@@ -1,0 +1,40 @@
+import javax.swing.*;
+import java.awt.*;
+
+public class Mainu {
+    JMenu menu,submenu,Edit;
+    JMenuItem n,o,s,f1,f2,c,p;
+    JFrame f;
+    Mainu(){
+        f=new JFrame("menu");
+        menu =new JMenu("Menu");
+        Edit=new JMenu("Edit");
+        submenu=new JMenu("Save as");
+        JMenuBar mb=new JMenuBar();
+        n=new JMenuItem("new");
+        o=new JMenuItem("open");
+        s=new JMenuItem("Save");
+        f1=new JMenuItem("Folder 1st");
+        f2=new JMenuItem("Folder 2nd");
+        c= new JMenuItem("Copy");
+        p= new JMenuItem("Paste");
+        Edit.add(c);Edit.add(p);
+        menu.add(n);
+        menu.add(o);
+        menu.add(s);
+        submenu.add(f1);
+        submenu.add(f2);
+        menu.add(submenu);
+        mb.add(menu);
+        mb.add(Edit);
+        f.setSize(500,500);
+        f.setVisible(true);
+        f.setLayout(null);
+        f.setJMenuBar(mb);
+        f.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+    }
+
+    public static void main(String[] args) {
+        new Mainu();
+    }
+}
