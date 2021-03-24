@@ -1,0 +1,13 @@
+  import javax.swing.*;
+
+public class Opationpane {
+    public static void main(String[] args) {
+        JFrame f=new JFrame();
+        JOptionPane.showMessageDialog(f,"welcome aman patidar in java tutorial");
+
+        f.setVisible(true);
+        f.setSize(505,500);
+        f.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+    }
+}
+
